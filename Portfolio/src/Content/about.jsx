@@ -20,11 +20,12 @@ const About = () => {
                 />
               </div>
               <div className=" leading-8 text-xl font-sans font-thin">
-                Originally from Latin, Lorem ipsum has no intelligible meaning.
-                It is simply a display of letters to be viewed as a sample with
-                given graphical elements in a file. "Lipsum" (a portmanteau of
-                lorem and ipsum) generators are commonly used to form generic
-                text in a file
+                I am hardworking, quick learner and resourceful IT graduate
+                looking for career in web development who has developed
+                responsible approach to the task that I undertake or with the
+                situation I am presented with. I have recently completed my
+                degree in BSc(hons) in Computing from Softwarica College of IT
+                and E-Commerce.
               </div>
             </div>
           </div>
