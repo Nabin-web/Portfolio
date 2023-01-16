@@ -1,0 +1,6 @@
+.background-active {
+  background-color: aliceblue;
+  transition: background-color 200ms linear;
+
+  color: black;
+}
