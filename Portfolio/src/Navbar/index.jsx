@@ -53,7 +53,7 @@ const Navbar = () => {
         </div>
       </div>
       <section id="home" className="section">
-        <div className="flex flex-col  h-screen bg-prof gap-8 absolute top-0 left-24 justify-center text-white">
+        <div className="flex flex-col  h-screen bg-prof gap-8 absolute top-0 left-24  justify-center text-white">
           <div className="text-6xl mt-30">Hello, I'm</div>
           <div className="font-bold text-7xl ">Nabin Kutu</div>
           <div className="uppercase text-zinc-500 tracking-tighter">
