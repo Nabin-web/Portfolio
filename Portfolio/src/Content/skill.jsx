@@ -24,7 +24,7 @@ const Skills = () => {
   return (
     <div className="text-white">
       <div className="text-center mt-36 mb-8 text-2xl font-bold">Skills</div>
-      <div className="flex mx-auto pb-36">
+      <div className="flex mx-auto pb-16">
         <div className="grid grid-cols-8 items-center place-items-center gap-4 mx-auto  py-2 px-2  ">
           {skills.map((each, index) => (
             <div className="flex flex-col items-center">

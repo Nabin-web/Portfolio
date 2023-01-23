@@ -24,7 +24,7 @@ const Navbar = () => {
   return (
     <>
       {" "}
-      <div className="sticky top-0" id="Nav">
+      <div className="sticky top-0 z-20" id="Nav">
         <div className={`container ${scroll ? `text-black` : `text-white`} `}>
           <div className=" flex items-center mx-auto  justify-between">
             <div />

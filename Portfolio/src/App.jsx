@@ -7,6 +7,7 @@ import { loadFull } from "tsparticles";
 import About from "./Content/about";
 import "./App.css";
 import Skills from "./Content/skill";
+import Project from "./Content/project";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -20,7 +21,7 @@ function App() {
 
   return (
     <>
-      <div className="App font-alegreya">
+      <div className="App font-alegreya text-xs">
         <Particles
           init={particlesInit}
           loaded={particlesLoaded}
@@ -35,6 +36,7 @@ function App() {
         <div style={{ background: "#000033" }} className="">
           <About />
           <Skills />
+          <Project />
         </div>
       </div>
     </>
