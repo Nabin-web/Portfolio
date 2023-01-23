@@ -3,8 +3,6 @@ import Saathimart from "../assets/logo/sathimart.png";
 import Sybazzar from "../assets/logo/sybazzar.png";
 import Upakart from "../assets/logo/upakart.png";
 import WaftCommerce from "../assets/logo/waftcommerce.svg";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
-import { useState } from "react";
 
 const compArray = [
   {
@@ -50,56 +48,12 @@ const compArray = [
 ];
 
 const Project = () => {
-  const [showAll, setShowAll] = useState({
-    0: false,
-    1: false,
-    2: false,
-    3: false,
-    4: false,
-  });
-
-  const handleShowAll = (index) => {
-    setShowAll({ ...showAll, [index]: !showAll[index] });
-  };
-
-  function SampleNextArrow(props) {
-    const { onClick } = props;
-    return (
-      <button
-        className="absolute top-1/2 right-5 lg:right-10 z-10"
-        onClick={onClick}
-      >
-        <FaChevronRight className="text-white text-4xl lg:text-6xl" />
-      </button>
-    );
-  }
-
-  function SamplePrevArrow(props) {
-    const { onClick } = props;
-    return (
-      <button
-        className="absolute top-1/2 left-5 lg:left-10 z-10"
-        onClick={onClick}
-      >
-        <FaChevronLeft className="text-white text-4xl lg:text-6xl" />
-      </button>
-    );
-  }
-
-  var settings = {
-    dots: false,
-    infinite: true,
-    speed: 800,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 4500,
-    nextArrow: <SampleNextArrow />,
-    prevArrow: <SamplePrevArrow />,
-  };
   return (
-    <div>
-      <div className="grid grid-cols-4 items-center gap-4 justify-center">
+    <div className="">
+      <div className="text-center mb-8 text-2xl font-bold text-white">
+        Featured Projects
+      </div>
+      <div className="grid grid-cols-4 mb-24 items-center gap-4 justify-center mx-auto">
         {compArray.map((each) => (
           <div
             key={each.id}
@@ -113,51 +67,6 @@ const Project = () => {
           </div>
         ))}
       </div>
-
-      {/* <section id="recentworks">
-        <div className="py-40">
-          <div className="flex justify-center gap-2 items-baseline pb-10">
-            <span className="text-2xl">Featured</span>
-            <span className="text-2xl semi-bold">Projects</span>
-          </div>
-
-          <Slider {...settings}>
-            {compArray.map((each) => (
-              <div className="slider-main" key={each.id}>
-                <img src={each.detailImg} alt="details" className="w-60" />
-                <div>
-                  <div className="lg:text-2xl md:text-xl medium-bold pb-2">
-                    {each.name}
-                  </div>
-                  <div className="lg:text-sm text-xs">
-                    {showAll[each.id] === false ? (
-                      <div className="flex flex-col gap-1">
-                        {each.details.substring(0, 280)}...{" "}
-                        <span
-                          className="text-zinc-400 cursor-pointer medium-bold hover:text-white duration-100"
-                          onClick={() => handleShowAll(each.id)}
-                        >
-                          Read More...
-                        </span>
-                      </div>
-                    ) : (
-                      <div className="flex flex-col gap-1">
-                        {each.details}{" "}
-                        <span
-                          className="text-zinc-400 cursor-pointer medium-bold hover:text-white duration-100"
-                          onClick={() => handleShowAll(each.id)}
-                        >
-                          ...Read Less
-                        </span>
-                      </div>
-                    )}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </Slider>
-        </div>
-      </section> */}
     </div>
   );
 };

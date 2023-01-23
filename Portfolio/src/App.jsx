@@ -8,6 +8,8 @@ import About from "./Content/about";
 import "./App.css";
 import Skills from "./Content/skill";
 import Project from "./Content/project";
+import Footer from "./Content/Footer";
+import Contact from "./Content/Contact";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -30,13 +32,15 @@ function App() {
         />
       </div>
 
-      <div className="z-10 relative">
+      <div className="z-10 relative container">
         <Navbar />
 
         <div style={{ background: "#000033" }} className="">
           <About />
           <Skills />
           <Project />
+          <Contact />
+          <Footer />
         </div>
       </div>
     </>

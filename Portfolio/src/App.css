@@ -4,3 +4,7 @@
 
   color: black;
 }
+
+.btn {
+  @apply py-2 px-6 rounded-full uppercase tracking-wider duration-300 ease-in-out;
+}

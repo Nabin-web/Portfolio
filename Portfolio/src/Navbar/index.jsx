@@ -53,14 +53,14 @@ const Navbar = () => {
         </div>
       </div>
       <section id="home" className="section">
-        <div className="flex flex-col  h-screen bg-prof gap-8 absolute top-0 left-24  justify-center text-white">
+        <div className="flex flex-col items-center h-screen bg-prof  gap-8 absolute top-0 w-full justify-center text-white">
           <div className="text-6xl mt-30">Hello, I'm</div>
           <div className="font-bold text-7xl ">Nabin Kutu</div>
           <div className="uppercase text-zinc-500 tracking-tighter">
             Web Developer
           </div>
           <a
-            className="w-1/3 border rounded-full p-2 hover:bg-white hover:text-black "
+            className="w-1/8 border rounded-full px-4 py-2 hover:bg-white hover:text-black "
             href="../../public/cv.pdf"
             download
           >
