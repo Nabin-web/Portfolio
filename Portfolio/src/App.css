@@ -8,3 +8,8 @@
 .btn {
   @apply py-2 px-6 rounded-full uppercase tracking-wider duration-300 ease-in-out;
 }
+
+.error {
+  border-width: 2.5px;
+  border-color: rgb(213, 29, 29);
+}

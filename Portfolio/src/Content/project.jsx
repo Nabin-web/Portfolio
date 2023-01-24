@@ -53,7 +53,7 @@ const Project = () => {
       <div className="text-center mb-8 text-2xl font-bold text-white">
         Featured Projects
       </div>
-      <div className="grid grid-cols-4 mb-24 items-center gap-4 justify-center mx-auto">
+      <div className="grid grid-cols-4 mb-8 items-center gap-4 justify-center mx-auto">
         {compArray.map((each) => (
           <div
             key={each.id}

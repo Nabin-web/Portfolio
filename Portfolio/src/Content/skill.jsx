@@ -27,7 +27,7 @@ const Skills = () => {
       <div className="flex mx-auto pb-16">
         <div className="grid grid-cols-8 items-center place-items-center gap-4 mx-auto py-2 px-2  ">
           {skills.map((each, index) => (
-            <div className="flex flex-col items-center">
+            <div className="flex flex-col items-center" key={index}>
               <img
                 src={each.image}
                 alt={each.name}

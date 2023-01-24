@@ -1,7 +1,11 @@
 import React, { useState } from "react";
+import { useEffect } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import emailjs from "@emailjs/browser";
 
+const api_key = "27429d0ffa8240a092362d85de9c7fde";
+const base_url = "https://emailvalidation.abstractapi.com/v1/?";
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -20,6 +24,28 @@ const Contact = () => {
     setFormError({ ...formError, [e.target.name]: "" });
   };
 
+  const handleValidateEmail = () => {
+    sendEmailValidationRequest(formData.email);
+  };
+
+  const sendEmailValidationRequest = async (email) => {
+    try {
+      if (email !== "") {
+        const response = await fetch(
+          `${base_url}api_key=${api_key}&email=${email}`
+        );
+
+        const data = await response.json();
+        const isValidSMTP = data.is_smtp_valid.value;
+        if (!isValidSMTP) {
+          setFormError({ ...formData, email: "Enter valid Email" });
+        }
+      }
+    } catch (err) {
+      throw err;
+    }
+  };
+
   const validateData = (data) => {
     let validate = true;
     if (data.name === "") {
@@ -36,28 +62,18 @@ const Contact = () => {
   };
 
   const handleSubmit = (e) => {
+    const data = {
+      from_name: formData.name,
+      to_name: "Nabin Kutu",
+      message: formData.message,
+    };
     e.preventDefault();
     if (validateData(formData) === true) {
-      const formData = new FormData();
-      formData.append(
-        "name",
-        document.querySelector('input[name="name"]').value
-      );
-      formData.append(
-        "email",
-        document.querySelector('input[name="email"]').value
-      );
-      formData.append(
-        "message",
-        document.querySelector('textarea[name="message"]').value
-      );
       setLoading(true);
-      fetch("https://getform.io/f/83db24c9-4e7d-4971-a76b-2a3e661a719b", {
-        method: "POST",
-        body: formData,
-      })
-        .then((response) => {
-          response.status === 200 &&
+      emailjs
+        .send("service_zz43qsb", "template_0ttlmes", data, "j_VMKN8GhQJsZSZxD")
+        .then((res) => {
+          if (res.status === 200) {
             toast.success("Form Submitted Successfully.", {
               position: "bottom-left",
               autoClose: 5000,
@@ -67,25 +83,13 @@ const Contact = () => {
               draggable: true,
               progress: undefined,
             });
-          response.status === 200 &&
             setFormData({ name: "", email: "", message: "" });
-          response.status === 200 &&
             setFormError({ name: "", email: "", message: "" });
-
-          response.status === 429 &&
-            toast.warn("Please wait a minute.", {
-              position: "bottom-left",
-              autoClose: 5000,
-              hideProgressBar: false,
-              closeOnClick: true,
-              pauseOnHover: true,
-              draggable: true,
-              progress: undefined,
-            });
-          setLoading(false);
+            setLoading(false);
+          }
         })
-        .catch((error) => {
-          console.log(error);
+        .catch((err) => {
+          console.log(err);
           setLoading(false);
         });
     } else {
@@ -103,7 +107,7 @@ const Contact = () => {
 
   return (
     <section id="getintotouch ">
-      <div className="my-10 mt-40 lg:px-4  px-8">
+      <div className="my-10 mt-20 lg:px-4  px-8">
         <div className="flex justify-center gap-2 items-baseline pb-10 text-white">
           <span className="text-2xl">Get</span>
           <span className="text-2xl semi-bold">In Touch</span>
@@ -118,7 +122,7 @@ const Contact = () => {
                 name="name"
                 placeholder="Your Full Name"
                 className={`${
-                  formError.name !== "" ? "error" : ""
+                  formData.name !== "" ? "" : "error"
                 } px-4 py-3 w-full rounded bg-zinc-700 text-sm medium-bold focus:bg-zinc-600 outline-none`}
                 onChange={handleChange}
                 value={formData.name}
@@ -128,16 +132,17 @@ const Contact = () => {
                 name="email"
                 placeholder="Your Email Address"
                 className={`${
-                  formError.email !== "" ? "error" : ""
+                  formData.email !== "" ? "" : "error"
                 } px-4 py-3 rounded bg-zinc-700 text-sm medium-bold focus:bg-zinc-600 outline-none`}
                 onChange={handleChange}
                 value={formData.email}
+                onBlur={() => handleValidateEmail()}
               />
               <textarea
                 placeholder="Write a Message"
                 name="message"
                 className={`${
-                  formError.message !== "" ? "error" : ""
+                  formData.message !== "" ? "" : "error"
                 } px-4 py-3 rounded bg-zinc-700 text-sm medium-bold focus:bg-zinc-600 outline-none h-44`}
                 onChange={handleChange}
                 value={formData.message}
@@ -155,6 +160,11 @@ const Contact = () => {
                   </div>
                 ) : (
                   <div>Send</div>
+                  // <a
+                  //   href={`mailto:${formData.email}?subject=${formData.name}&body=${formData.message}`}
+                  // >
+                  //   Send
+                  // </a>
                 )}
               </button>
             </form>
