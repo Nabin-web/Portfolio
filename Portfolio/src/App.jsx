@@ -32,10 +32,10 @@ function App() {
         />
       </div>
 
-      <div className="z-10 relative container">
+      <div className="z-10 relative ">
         <Navbar />
 
-        <div style={{ background: "#000033" }} className="">
+        <div style={{ background: "#000033" }} className="container mx-auto">
           <About />
           <Skills />
           <Project />

@@ -25,20 +25,21 @@ const Navbar = () => {
     <>
       {" "}
       <div className="sticky top-0 z-20" id="Nav">
-        <div className={`container ${scroll ? `text-black` : `text-white`} `}>
-          <div className=" flex items-center mx-auto  justify-between">
-            <div />
-            <div className="flex items-center gap-2">
-              {navArray.map((each, index) => (
-                <div
-                  key={index}
-                  className="  p-4 rounded font-sans font-thin capitalize  cursor-pointer"
-                >
-                  {each.title}
-                </div>
-              ))}
-            </div>
-            <div className="flex gap-2 items-center">
+        <div
+          className={`container mx-auto ${
+            scroll ? `text-black` : `text-white`
+          } `}
+        >
+          <div className=" flex items-center justify-center">
+            {navArray.map((each, index) => (
+              <div
+                key={index}
+                className=" p-4 rounded font-sans font-thin capitalize  cursor-pointer"
+              >
+                {each.title}
+              </div>
+            ))}
+            {/* <div className="flex gap-2 items-center">
               <a target="_blank" href="https://github.com/Nabin-web">
                 <FaGithub />
               </a>
@@ -48,7 +49,7 @@ const Navbar = () => {
               >
                 <FaLinkedin className="" />
               </a>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
