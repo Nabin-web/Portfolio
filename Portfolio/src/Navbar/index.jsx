@@ -5,9 +5,9 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 const Navbar = () => {
   const [scroll, setScroll] = useState(false);
   const navArray = [
-    { title: "HOME", desc: "" },
-    { title: "ABOUT", desc: "See about Nabin" },
-    { title: "CONTACT", desc: "Contact/Information" },
+    { label: "HOME", link: "#home" },
+    { label: "ABOUT", link: "#about" },
+    { label: "SKILLS", link: "#skills" },
   ];
 
   window.onscroll = function () {
@@ -34,9 +34,11 @@ const Navbar = () => {
             {navArray.map((each, index) => (
               <div
                 key={index}
-                className=" p-4 rounded font-sans font-thin capitalize  cursor-pointer"
+                className="p-4 rounded font-sans font-thin capitalize  cursor-pointer"
+                // onClick={() => each.link === "#home" && window.scrollTo(0, 0)}
+                // disabled={each.label !== "HOME" && true}
               >
-                {each.title}
+                {each.label}
               </div>
             ))}
             {/* <div className="flex gap-2 items-center">

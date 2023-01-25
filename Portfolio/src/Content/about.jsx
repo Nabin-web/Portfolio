@@ -7,7 +7,6 @@ const About = () => {
     <section>
       <div className="text-white" style={{ marginTop: "750px" }}>
         <div className=" container py-8 mx-auto gap-20 flex">
-          <div className="w-1/3" />
           <img src={Me} className="h-80 w-1/3" />
           <div className="">
             <div>

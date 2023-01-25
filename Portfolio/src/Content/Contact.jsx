@@ -12,11 +12,7 @@ const Contact = () => {
     email: "",
     message: "",
   });
-  const [formError, setFormError] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
+  const [formError, setFormError] = useState({});
   const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
@@ -38,7 +34,7 @@ const Contact = () => {
         const data = await response.json();
         const isValidSMTP = data.is_smtp_valid.value;
         if (!isValidSMTP) {
-          setFormError({ ...formData, email: "Enter valid Email" });
+          setFormError({ ...formError, email: "Enter valid Email" });
         }
       }
     } catch (err) {
@@ -48,16 +44,19 @@ const Contact = () => {
 
   const validateData = (data) => {
     let validate = true;
-    if (data.name === "") {
-      setFormError({ ...formError, name: "Please add some value." });
-      validate = false;
-    } else if (data.email === "") {
-      setFormError({ ...formError, email: "Please add some value." });
-      validate = false;
-    } else if (data.message === "") {
+    if (data.message === "") {
       setFormError({ ...formError, message: "Please add some value." });
       validate = false;
     }
+    if (data.name === "") {
+      setFormError({ ...formError, name: "Please add some value." });
+      validate = false;
+    }
+    if (data.email === "") {
+      setFormError({ ...formError, email: "Please add some value." });
+      validate = false;
+    }
+
     return validate;
   };
 
@@ -89,11 +88,12 @@ const Contact = () => {
           }
         })
         .catch((err) => {
+          setFormError({ ...formError, email: "Not a valid email." });
           console.log(err);
           setLoading(false);
         });
     } else {
-      toast.warn("Please add all required fields.", {
+      toast.warn("Please enter valid values.", {
         position: "bottom-left",
         autoClose: 5000,
         hideProgressBar: false,
@@ -122,7 +122,9 @@ const Contact = () => {
                 name="name"
                 placeholder="Your Full Name"
                 className={`${
-                  formData.name !== "" ? "" : "error"
+                  formError.name === "" || formError.name === undefined
+                    ? ""
+                    : "error"
                 } px-4 py-3 w-full rounded bg-zinc-700 text-sm medium-bold focus:bg-zinc-600 outline-none`}
                 onChange={handleChange}
                 value={formData.name}
@@ -132,17 +134,22 @@ const Contact = () => {
                 name="email"
                 placeholder="Your Email Address"
                 className={`${
-                  formData.email !== "" ? "" : "error"
-                } px-4 py-3 rounded bg-zinc-700 text-sm medium-bold focus:bg-zinc-600 outline-none`}
+                  formError.email === "" || formError.email === undefined
+                    ? ""
+                    : "error"
+                }  px-4 py-3 rounded bg-zinc-700 text-sm medium-bold focus:bg-zinc-600 outline-none`}
                 onChange={handleChange}
                 value={formData.email}
                 onBlur={() => handleValidateEmail()}
               />
+
               <textarea
                 placeholder="Write a Message"
                 name="message"
                 className={`${
-                  formData.message !== "" ? "" : "error"
+                  formError.message === "" || formError.message === undefined
+                    ? ""
+                    : "error"
                 } px-4 py-3 rounded bg-zinc-700 text-sm medium-bold focus:bg-zinc-600 outline-none h-44`}
                 onChange={handleChange}
                 value={formData.message}
