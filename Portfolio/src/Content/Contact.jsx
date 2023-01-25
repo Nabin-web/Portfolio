@@ -106,7 +106,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="getintotouch ">
+    <section id="getintotouch" className="mt-8 mb-16">
       <div className="my-10 mt-20 lg:px-4  px-8">
         <div className="flex justify-center gap-2 items-baseline pb-10 text-white">
           <span className="text-2xl">Get</span>

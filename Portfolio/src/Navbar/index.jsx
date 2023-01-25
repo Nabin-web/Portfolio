@@ -63,7 +63,7 @@ const Navbar = () => {
             Web Developer
           </div>
           <a
-            className="w-1/8 border rounded-full px-4 py-2 hover:bg-white hover:text-black "
+            className="w-1/8 border rounded-full px-4 py-2 hover:bg-white hover:text-black transition duration-500"
             href="../../public/cv.pdf"
             download
           >

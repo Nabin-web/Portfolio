@@ -6,7 +6,7 @@ const About = () => {
   return (
     <section>
       <div className="text-white" style={{ marginTop: "750px" }}>
-        <div className="p-8 grid md:grid-cols-2 grid-cols-1 gap-8 items-center">
+        <div className=" grid md:grid-cols-2 grid-cols-1 gap-8 items-center">
           <img src={Me} className="p-14 lg:p-28" />
           <div className="">
             <div>
