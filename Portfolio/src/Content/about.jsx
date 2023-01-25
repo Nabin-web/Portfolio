@@ -6,8 +6,8 @@ const About = () => {
   return (
     <section>
       <div className="text-white" style={{ marginTop: "750px" }}>
-        <div className=" container py-8 mx-auto gap-20 flex">
-          <img src={Me} className="h-80 w-1/3" />
+        <div className="p-8 grid md:grid-cols-2 grid-cols-1 gap-8 items-center">
+          <img src={Me} className="p-14 lg:p-28" />
           <div className="">
             <div>
               <div className=" text-2xl font-bold">About Me</div>
@@ -18,7 +18,7 @@ const About = () => {
                   className="h-10 mt-8 -ml-2"
                 />
               </div>
-              <div className=" leading-8 text-xl font-sans font-thin">
+              <div className="text-base font-sans font-thin">
                 I am hardworking, quick learner and resourceful IT graduate
                 looking for career in web development who has developed
                 responsible approach to the task that I undertake or with the

@@ -35,12 +35,14 @@ function App() {
       <div className="z-10 relative ">
         <Navbar />
 
-        <div style={{ background: "#000033" }} className="container mx-auto">
-          <About />
-          <Skills />
-          <Project />
-          <Contact />
-          <Footer />
+        <div style={{ background: "#000033" }}>
+          <div className="container mx-auto">
+            <About />
+            <Skills />
+            <Project />
+            <Contact />
+            <Footer />
+          </div>
         </div>
       </div>
     </>
