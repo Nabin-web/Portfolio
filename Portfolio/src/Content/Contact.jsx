@@ -25,6 +25,7 @@ const Contact = () => {
   };
 
   const sendEmailValidationRequest = async (email) => {
+    let valid = true;
     try {
       if (email !== "") {
         const response = await fetch(
@@ -35,8 +36,10 @@ const Contact = () => {
         const isValidSMTP = data.is_smtp_valid.value;
         if (!isValidSMTP) {
           setFormError({ ...formError, email: "Enter valid Email" });
+          valid = false;
         }
       }
+      return valid;
     } catch (err) {
       throw err;
     }
@@ -44,16 +47,49 @@ const Contact = () => {
 
   const validateData = (data) => {
     let validate = true;
-    if (data.message === "") {
+    if (data.name === "" && data.message === "" && data.email === "") {
+      setFormError({
+        ...formError,
+        name: "Please add some value.",
+        email: "Please add some value.",
+        message: "Please add some value.",
+      });
+      validate = false;
+    } else if (data.message === "" && data.email === "") {
+      setFormError({
+        ...formError,
+        email: "Please add some value.",
+        message: "Please add some value.",
+      });
+      validate = false;
+    } else if (data.message === "" && data.name === "") {
+      setFormError({
+        ...formError,
+        name: "Please add some value.",
+        message: "Please add some value.",
+      });
+      validate = false;
+    } else if (data.name === "" && data.email === "") {
+      setFormError({
+        ...formError,
+        name: "Please add some value.",
+        email: "Please add some value.",
+      });
+      validate = false;
+    } else if (data.name === "") {
+      setFormError({
+        ...formError,
+        name: "Please add some value.",
+      });
+      validate = false;
+    } else if (data.email === "") {
+      setFormError({
+        ...formError,
+        email: "Please add some value.",
+      });
+      validate = false;
+    } else if (data.message === "") {
       setFormError({ ...formError, message: "Please add some value." });
-      validate = false;
-    }
-    if (data.name === "") {
-      setFormError({ ...formError, name: "Please add some value." });
-      validate = false;
-    }
-    if (data.email === "") {
-      setFormError({ ...formError, email: "Please add some value." });
       validate = false;
     }
 
@@ -65,9 +101,10 @@ const Contact = () => {
       from_name: formData.name,
       to_name: "Nabin Kutu",
       message: formData.message,
+      email: formData.email,
     };
     e.preventDefault();
-    if (validateData(formData) === true) {
+    if (validateData(formData) === true && formError.email === "") {
       setLoading(true);
       emailjs
         .send("service_zz43qsb", "template_0ttlmes", data, "j_VMKN8GhQJsZSZxD")
@@ -89,7 +126,6 @@ const Contact = () => {
         })
         .catch((err) => {
           setFormError({ ...formError, email: "Not a valid email." });
-          console.log(err);
           setLoading(false);
         });
     } else {
