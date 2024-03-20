@@ -9,24 +9,47 @@ import Html from "../assets/html.png";
 import Redux from "../assets/redux.png";
 import Saga from "../assets/saga.png";
 import Git from "../assets/git.png";
-import { FaCss3, FaGit, FaHtml5, FaJs, FaReact } from "react-icons/fa";
+import {
+  FaAws,
+  FaCss3,
+  FaGit,
+  FaHtml5,
+  FaJira,
+  FaJs,
+  FaNodeJs,
+  FaReact,
+  FaTrello,
+} from "react-icons/fa";
 import {
   SiTailwindcss,
   SiReduxsaga,
   SiRedux,
   SiWebpack,
+  SiGoogleanalytics,
   SiNextdotjs,
+  SiChakraui,
 } from "react-icons/si";
 
 const Skills = () => {
   const skills = [
     { name: "JavaScript", image: <FaJs />, color: "text-yellow-400" },
     { name: "React", image: <FaReact />, color: "text-blue-400" },
+    { name: "Next Js", image: <SiNextdotjs />, color: "text-purple-800" },
     { name: "Tailwindcss", image: <SiTailwindcss />, color: "text-blue-600" },
     { name: "Redux", image: <SiRedux />, color: "text-indigo-500" },
     { name: "Saga", image: <SiReduxsaga />, color: "text-emerald-400" },
+    { name: "Node Js", image: <FaNodeJs />, color: "text-green-300" },
+    { name: "Jira", image: <FaJira />, color: "text-blue-400" },
+    { name: "Trello", image: <FaTrello />, color: "text-blue-400" },
+    { name: "Mantine UI", image: <FaJira />, color: "text-blue-400" },
+    { name: "Chakra UI", image: <SiChakraui />, color: "text-green-300" },
+    { name: "AWS", image: <FaAws />, color: "text-white" },
+    {
+      name: "Google Analytics",
+      image: <SiGoogleanalytics />,
+      color: "text-yellow-400",
+    },
     { name: "Git", image: <FaGit />, color: "text-amber-500" },
-    { name: "Next Js", image: <SiNextdotjs />, color: "text-purple-800" },
   ];
   return (
     <div className="text-white mb-16">

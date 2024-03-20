@@ -19,12 +19,13 @@ const About = () => {
                 />
               </div>
               <div className="text-base font-sans font-thin">
-                I am hardworking, quick learner and resourceful IT graduate
-                looking for career in web development who has developed
-                responsible approach to the task that I undertake or with the
-                situation I am presented with. I have recently completed my
-                degree in BSc(hons) in Computing from Softwarica College of IT
-                and E-Commerce.
+                As a diligent, fast learner, and resourceful IT graduate, I am
+                an excellent candidate for an IT company seeking to fill an open
+                position. I possess a good problem-solving ability and can
+                readily adapt to new technology. I also approach tasks with a
+                sense of responsibility. I am enthusiastic about taking on
+                challenges and applying my skills and knowledge to any given
+                situation. Moreover, I am proficient in React development.
               </div>
             </div>
           </div>

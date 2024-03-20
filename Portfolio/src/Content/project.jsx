@@ -2,6 +2,9 @@ import React from "react";
 import Saathimart from "../assets/logo/sathimart.png";
 import Sybazzar from "../assets/logo/sybazzar.png";
 import Upakart from "../assets/logo/upakart.png";
+import NepMeds from "../assets/logo/nepmed_logo.png";
+import AIML from "../assets/logo/aiml.png";
+import IOFund from "../assets/logo/iofund.png";
 import WaftCommerce from "../assets/logo/waftcommerce.svg";
 
 const compArray = [
@@ -13,6 +16,36 @@ const compArray = [
     // detailImg: SybazzarDetail,
     details:
       "SYBazzar is an e-commerce marketplace that started its operation in 2022, serving various categories ranging from FMCG, apparel, and electronics inside Nepal. Sybazzar helps sellers to boost their business by providing them with a user-friendly platform, logistical services, cash handling services, product photography, warehousing, and so on. SYbazzar is focused on providing an excellent customer experience through ease-of-purchase, comprehensive customer care, and hassle-free shopping and returns experience. SYbazzar has the vision to connect local sellers to global consumers and hence impact the eCommerce industry by putting one brick at a time.",
+    name: "Sybazzar",
+  },
+  {
+    id: 5,
+    label: "IO-Fund",
+    img: IOFund,
+    link: "",
+    // detailImg: SybazzarDetail,
+    details:
+      "I/O Fund runs one of the highest-performing tech-focused stock portfolios in the world. Our approach to tech stocks provides serious tech investors with premium services that will give them a competitive edge on growth tech stocks.",
+    name: "Sybazzar",
+  },
+  {
+    id: 6,
+    label: "Open Data Fabric",
+    img: AIML,
+    link: "",
+    // detailImg: SybazzarDetail,
+    details:
+      "Open Data Fabric is the company's static website showcasing comprehensive information about the company's services with cutting edge AI solution.",
+    name: "Sybazzar",
+  },
+  {
+    id: 7,
+    label: "NepMeds",
+    img: NepMeds,
+    link: "",
+    // detailImg: SybazzarDetail,
+    details:
+      "NepMeds offers a convenient solution to the challenges of obtaining essential medicines and healthcare services. With online ordering, automated refill reminders, and doorstep delivery, it eliminates the need for waiting in queues or navigating through traffic. Enjoy a wide range of healthcare services from the comfort of your home, ensuring seamless access to quality medications and support for your wellness needs",
     name: "Sybazzar",
   },
   {
