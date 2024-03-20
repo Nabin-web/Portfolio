@@ -4,7 +4,7 @@ import Quotation from "../assets/quotation.png";
 
 const About = () => {
   return (
-    <section>
+    <section id="about_section">
       <div className="text-white" style={{ marginTop: "750px" }}>
         <div className=" grid md:grid-cols-2 grid-cols-1 gap-8 items-center">
           <img src={Me} className="p-14 lg:p-28" />

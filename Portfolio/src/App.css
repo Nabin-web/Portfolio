@@ -37,3 +37,7 @@
 .tooltip:hover .tooltiptext {
   visibility: visible;
 }
+
+html {
+  scroll-behavior: smooth;
+}

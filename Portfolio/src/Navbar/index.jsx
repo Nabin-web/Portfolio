@@ -5,14 +5,13 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 const Navbar = () => {
   const [scroll, setScroll] = useState(false);
   const navArray = [
-    { label: "HOME", link: "#home" },
-    { label: "ABOUT", link: "#about" },
-    { label: "SKILLS", link: "#skills" },
+    { label: "HOME", link: "#home", id: "home" },
+    { label: "ABOUT", link: "#about", id: "about_section" },
+    { label: "SKILLS", link: "#skills", id: "skill_section" },
   ];
 
   window.onscroll = function () {
     const target = document.getElementById("Nav");
-
     if (window.scrollY > 20) {
       target.classList.add("background-active");
       setScroll(true);
@@ -32,14 +31,15 @@ const Navbar = () => {
         >
           <div className=" flex items-center justify-center">
             {navArray.map((each, index) => (
-              <div
+              <a
                 key={index}
+                href={`#${each.id}`}
                 className="p-4 rounded font-sans font-thin capitalize  cursor-pointer"
                 // onClick={() => each.link === "#home" && window.scrollTo(0, 0)}
                 // disabled={each.label !== "HOME" && true}
               >
                 {each.label}
-              </div>
+              </a>
             ))}
             {/* <div className="flex gap-2 items-center">
               <a target="_blank" href="https://github.com/Nabin-web">
