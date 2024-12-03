@@ -19,6 +19,7 @@ import {
   FaNodeJs,
   FaReact,
   FaTrello,
+  FaWpforms,
 } from "react-icons/fa";
 import {
   SiTailwindcss,
@@ -37,6 +38,7 @@ const Skills = () => {
     { name: "Next Js", image: <SiNextdotjs />, color: "text-purple-800" },
     { name: "Tailwindcss", image: <SiTailwindcss />, color: "text-blue-600" },
     { name: "Redux", image: <SiRedux />, color: "text-indigo-500" },
+    { name: "React Form Hook", image: <FaWpforms />, color: "text-indigo-500" },
     { name: "Saga", image: <SiReduxsaga />, color: "text-emerald-400" },
     { name: "Node Js", image: <FaNodeJs />, color: "text-green-300" },
     { name: "Jira", image: <FaJira />, color: "text-blue-400" },

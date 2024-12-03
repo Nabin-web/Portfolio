@@ -49,7 +49,7 @@ html {
 }
 
 .dynamic-txts li {
-  color: #ff4c29;
+  color: #ff005a;
   font-size: 60px;
   font-weight: 500;
   position: relative;
@@ -69,7 +69,7 @@ html {
   left: 0;
   height: 100%;
   width: 100%;
-  border-left: 2px solid #ff4c29;
+  border-left: 2px solid #ff005a;
   animation: typing 3s steps(10) infinite;
   background-color: rgb(0, 0, 51);
 }
@@ -81,5 +81,21 @@ html {
   }
   100% {
     left: 0;
+  }
+}
+
+.float-image {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(50px);
+  }
+  100% {
+    transform: translateY(0);
   }
 }

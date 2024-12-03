@@ -1,5 +1,6 @@
 import React from "react";
-import Me from "../assets/nabin.jpeg";
+import Me from "../assets/nabin_bg.png";
+import Triangle from "../assets/triangle.png";
 import Quotation from "../assets/quotation.png";
 
 const About = () => {
@@ -7,7 +8,10 @@ const About = () => {
     <section id="about_section">
       <div className="text-white" style={{ marginTop: "750px" }}>
         <div className=" grid md:grid-cols-2 grid-cols-1 gap-8 items-center">
-          <img src={Me} className="p-14 lg:p-28" />
+          <div className=" relative float-image">
+            <img src={Me} className="absolute left-12 -top-4 p-14 lg:p-28 rounded-full z-20" />
+            <img src={Triangle} className=" rotate-12 "  />
+          </div>
           <div className="">
             <div>
               <div className=" text-2xl font-bold">About Me</div>
