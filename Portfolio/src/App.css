@@ -57,6 +57,12 @@ html {
   animation: slide 6s steps(2) infinite;
 }
 
+@media (max-width: 480px) {
+  .dynamic-txts li {
+    font-size: 30px; /* Font size for screens smaller than 480px */
+  }
+}
+
 @keyframes slide {
   100% {
     top: -85px;

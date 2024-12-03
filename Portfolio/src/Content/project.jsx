@@ -89,62 +89,64 @@ const compArray = [
 
 const Project = () => {
   return (
-    <div className="mt-8 mb-16">
-      <div className="text-center mb-8 text-2xl font-bold text-white">
-        Featured Projects
-      </div>
-      {/* <div className="grid md:grid-cols-4 grid-cols-2 mb-8 items-center gap-4 justify-center mx-auto">
-        {compArray.map((each) => (
-          <div
-            key={each.id}
-            className="border border-gray-300 grayscale hover:grayscale-0 hover:border-white duration-200 border-opacity-40 mx-auto p-4 px-8 cursor-pointer"
-          >
-            <img
-              src={each.img}
-              alt={each.label}
-              className="object-contain h-20"
-            />
-          </div>
-        ))}
-      </div> */}
-      <div className="grid md:grid-cols-4 grid-cols-2 mb-8 items-center gap-4 justify-center mx-auto">
-        {compArray.map((each) => (
-          <div
-            key={each.id}
-            className=" h-40 relative flex items-center justify-center rounded shadow-lg cursor-pointer group border-black"
-            style={{
-            backgroundSize: "cover", // Makes the image cover the entire div
-            backgroundPosition: "center", // Centers the image
-            backgroundRepeat: "no-repeat", // Prevents the image from repeating
-            background:"#FFFFFF"
-          }}
-          >
-            <img
-              src={each.img}
-              alt={each.label}
-              className=" object-contain h-20 inset-0 group-hover:opacity-30 transition-opacity duration-300"
+    <section id="projects_section">
+      <div className="mt-8 mb-16 md:p-0 px-4">
+        <div className="text-center mb-8 text-2xl font-bold text-white">
+          Featured Projects
+        </div>
+        {/* <div className="grid md:grid-cols-4 grid-cols-2 mb-8 items-center gap-4 justify-center mx-auto">
+          {compArray.map((each) => (
+            <div
+              key={each.id}
+              className="border border-gray-300 grayscale hover:grayscale-0 hover:border-white duration-200 border-opacity-40 mx-auto p-4 px-8 cursor-pointer"
+            >
+              <img
+                src={each.img}
+                alt={each.label}
+                className="object-contain h-20"
+              />
+            </div>
+          ))}
+        </div> */}
+        <div className="grid md:grid-cols-4 grid-cols-2 mb-8 items-center gap-4 justify-center mx-auto">
+          {compArray.map((each) => (
+            <div
+              key={each.id}
+              className=" h-40 relative flex items-center justify-center rounded shadow-lg cursor-pointer group border-black"
+              style={{
+              backgroundSize: "cover", // Makes the image cover the entire div
+              backgroundPosition: "center", // Centers the image
+              backgroundRepeat: "no-repeat", // Prevents the image from repeating
+              background:"#FFFFFF"
+            }}
+            >
+              <img
+                src={each.img}
+                alt={each.label}
+                className=" object-contain md:h-20 h-10 inset-0 group-hover:opacity-30 transition-opacity duration-300"
 
-            />
-             <div class="opacity-0 group-hover:opacity-100 duration-300 absolute inset-0 z-10 flex flex-col gap-4 pt-4 items-center text-6xl text-white font-semibold">
-              
-              <div className=" text-xs text-black h-20 p-4 line-clamp-4">{each.details}</div>
-              <a 
-                href={each?.link}
-                target="_blank"
-                style={{
-                  boxShadow:"0px 0px 4px #ff005a"
-                }}
-                disabled={!each.link}
-                className="w-1/8 text-xs border border-[#ff005a] rounded-full px-4 py-2 hover:bg-white text-black transition duration-500 shadow-2xl"
-              >
-                Visit Webiste
-              </a>
+              />
+              <div class="opacity-0 group-hover:opacity-100 duration-300 absolute inset-0 z-10 flex flex-col gap-4 pt-4 items-center text-6xl text-white font-semibold">
+                
+                <div className=" text-xs text-black h-20 p-4 line-clamp-4">{each.details}</div>
+                <a 
+                  href={each?.link}
+                  target="_blank"
+                  style={{
+                    boxShadow:"0px 0px 4px #ff005a"
+                  }}
+                  disabled={!each.link}
+                  className="w-1/8 text-xs border border-[#ff005a] rounded-full px-4 py-2 hover:bg-white text-black transition duration-500 shadow-2xl"
+                >
+                  Visit Webiste
+                </a>
 
-             </div>
-          </div>
-        ))}
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 

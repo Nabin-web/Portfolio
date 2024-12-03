@@ -55,14 +55,14 @@ const Skills = () => {
   ];
   return (
     <section id="skill_section">
-      <div className="text-white mb-16">
+      <div className="text-white mb-16 md:p-0 px-4">
         <div className="text-center mt-36 mb-8 text-2xl font-bold">Skills</div>
         <div className="flex mx-auto pb-16">
           <div className="grid md:grid-cols-7 grid-cols-3 items-center place-items-center gap-12 mx-auto py-2 px-2 justify-center">
             {skills.map((each, index) => (
               <div className="flex flex-col items-center" key={index}>
                 <div
-                  className={`${each.color} hover:scale-125 duration-300 ease-in-out cursor-pointer text-7xl`}
+                  className={`${each.color} hover:scale-125 duration-300 ease-in-out cursor-pointer text-7xl `}
                 >
                   {each.image}
                 </div>

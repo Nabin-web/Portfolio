@@ -9,11 +9,11 @@ const About = () => {
       <div className="text-white" style={{ marginTop: "750px" }}>
         <div className=" grid md:grid-cols-2 grid-cols-1 gap-8 items-center">
           <div className=" relative float-image">
-            <img src={Me} className="absolute left-12 -top-4 p-14 lg:p-28 rounded-full z-20" />
+            <img src={Me} className="absolute md:left-12 left-6 -top-4 p-14 lg:p-28 rounded-full z-20" />
             <img src={Triangle} className=" rotate-12 "  />
           </div>
           <div className="">
-            <div>
+            <div className="md:p-0 px-4">
               <div className=" text-2xl font-bold">About Me</div>
               <div>
                 <img

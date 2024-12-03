@@ -8,6 +8,7 @@ const Navbar = () => {
     { label: "HOME", link: "#home", id: "home" },
     { label: "ABOUT", link: "#about", id: "about_section" },
     { label: "SKILLS", link: "#skills", id: "skill_section" },
+    { label: "PROJECTS", link: "#projects", id: "projects_section" },
   ];
 
   window.onscroll = function () {
@@ -57,7 +58,7 @@ const Navbar = () => {
       </div>
       <section id="home" className="section">
         <div className="flex flex-col items-center h-screen bg-prof  gap-8 absolute top-0 w-full justify-center text-white">
-          <div className="text-6xl mt-30">Hello, I'm</div>
+          <div className="md:text-6xl text-3xl mt-30">Hello, I'm</div>
           <ul className="dynamic-txts font-bold text-center">
             <li>Nabin Kutu</li>
             <li>Frontend Developer</li>
