@@ -18,7 +18,7 @@ const About = () => {
                   className="h-10 mt-8 -ml-2"
                 />
               </div>
-              <div className="text-base font-sans font-thin">
+              <div className="text-base font-sans font-thin tracking-widest leading-10">
                 As a diligent, fast learner, and resourceful IT graduate, I am
                 an excellent candidate for an IT company seeking to fill an open
                 position. I possess a good problem-solving ability and can

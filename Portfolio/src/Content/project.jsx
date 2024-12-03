@@ -6,8 +6,17 @@ import NepMeds from "../assets/logo/nepmed_logo.png";
 import AIML from "../assets/logo/aiml.png";
 import IOFund from "../assets/logo/iofund.png";
 import WaftCommerce from "../assets/logo/waftcommerce.svg";
+import TiggApp from "../assets/logo/tigg.svg";
 
 const compArray = [
+  {
+    id: 1,
+    label: "Tigg App",
+    img: TiggApp,
+    link: "",
+    details:"Tigg is a cloud-based business management software designed to help small and medium-sized enterprises (SMEs) in Nepal streamline their operations, manage finances, and enhance productivity. It provides a comprehensive set of tools for accounting, inventory management, sales, and purchase cycles. Developed by BIC Technology Pvt. Ltd., Tigg is tailored to meet the specific needs of Nepali businesses, offering features like electronic billing, bank reconciliation, and real-time business intelligence.",
+    name: "Tigg App- Accounting Software",
+  },
   {
     id: 0,
     label: "sybazaar",

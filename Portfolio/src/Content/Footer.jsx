@@ -11,14 +11,6 @@ const Footer = () => {
       <div className="flex items-center gap-4 text-2xl pt-8 lg:pt-0">
         <a
           target="_blank"
-          href="https://www.facebook.com/nabin.kutu/"
-          rel="noreferrer"
-          className=" bg-white hover:bg-zinc-800 transition duration-500 p-3 shadow-lg rounded"
-        >
-          <FaFacebookF className="text-black hover:text-white" />
-        </a>
-        <a
-          target="_blank"
           href="https://www.linkedin.com/in/nabin-kutu-72a3571a1/"
           rel="noreferrer"
           className="rounded bg-white hover:bg-zinc-800 transition duration-500 p-3"

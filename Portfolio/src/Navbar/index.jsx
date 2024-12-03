@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../index.css";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaLinkedinIn } from "react-icons/fa";
 
 const Navbar = () => {
   const [scroll, setScroll] = useState(false);
@@ -58,9 +58,27 @@ const Navbar = () => {
       <section id="home" className="section">
         <div className="flex flex-col items-center h-screen bg-prof  gap-8 absolute top-0 w-full justify-center text-white">
           <div className="text-6xl mt-30">Hello, I'm</div>
-          <div className="font-bold text-7xl ">Nabin Kutu</div>
-          <div className="uppercase text-zinc-500 tracking-tighter">
-            Web Developer
+          <ul className="dynamic-txts font-bold text-center">
+            <li>Nabin Kutu</li>
+            <li>Frontend Developer</li>
+          </ul>
+          <div className="flex items-center gap-2">
+            <a
+              target="_blank"
+              href="https://www.linkedin.com/in/nabin-kutu-72a3571a1/"
+              rel="noreferrer"
+              className=" border rounded-full p-2 border-white"
+            >
+              <FaLinkedinIn className=" hover:text-white" />
+            </a>
+            <a
+            target="_blank"
+            href="https://github.com/Nabin-web"
+            rel="noreferrer"
+            className=" border rounded-full p-2 border-white"
+            >
+              <FaGithub className=" hover:text-white" />
+            </a>
           </div>
           <a
             className="w-1/8 border rounded-full px-4 py-2 hover:bg-white hover:text-black transition duration-500"
