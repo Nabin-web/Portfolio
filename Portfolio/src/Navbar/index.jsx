@@ -58,7 +58,7 @@ const Navbar = () => {
       </div>
       <section id="home" className="section">
         <div className="flex flex-col items-center h-screen bg-prof  gap-8 absolute top-0 w-full justify-center text-white">
-          <div className="md:text-6xl text-3xl mt-30">Hello, I'm</div>
+          <div className="md:text-6xl text-3xl mt-30">Welcome, I'm</div>
           <ul className="dynamic-txts font-bold text-center">
             <li>Nabin Kutu</li>
             <li>Frontend Developer</li>

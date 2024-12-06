@@ -10,6 +10,7 @@ import Skills from "./Content/skill";
 import Project from "./Content/project";
 import Footer from "./Content/Footer";
 import Contact from "./Content/Contact";
+import { Career } from "./Content/career";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -40,7 +41,9 @@ function App() {
             <About />
             <Skills />
             <Project />
+            <Career/>
             <Contact />
+            
             <Footer />
           </div>
         </div>
