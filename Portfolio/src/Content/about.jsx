@@ -2,17 +2,7 @@ import React from "react";
 import Me from "../assets/nabin_bg.png";
 import Triangle from "../assets/triangle.png";
 import Quotation from "../assets/quotation.png";
-import { FaBrain, FaCode, FaServer } from "react-icons/fa";
-
-const Feature = ({ icon, title, description }) => (
-  <li className="flex gap-3">
-    <span className="text-blue-600">{icon}</span>
-    <div>
-      <h4 className="font-semibold">{title}</h4>
-      <p className="text-gray-600">{description}</p>
-    </div>
-  </li>
-);
+import {useInView} from 'react-intersection-observer'
 
 function WindowControls() {
   return (
@@ -25,17 +15,21 @@ function WindowControls() {
 }
 
 const About = () => {
+  const {ref, inView, entry} = useInView({
+    threshold: 0.5,
+  })
+
+  console.log({inView, entry})
   return (
-    <section id="about_section">
+    <section ref={ref}  id="about_section">
       <div className="text-white" style={{ marginTop: "750px" }}>
-        <div className=" grid md:grid-cols-2 grid-cols-1 gap-8 items-center">
-          <div className=" relative float-image">
+        <div className={` grid md:grid-cols-2 grid-cols-1 gap-8 items-center  `}>
+          <div className={`${inView ? " opacity-100 ":"opacity-0 -translate-x-60"} relative float-image transition-opacity duration-500 ease-out`}>
             <img src={Me} className="absolute md:left-12 left-6 -top-4 p-14 lg:p-28 rounded-full z-20" />
             <img src={Triangle} className=" rotate-12 "  />
-            
           </div>
-          <div className="">
-            <div className="md:p-0 px-4">
+       
+            <div className={`${inView ? " opacity-100":"opacity-0 translate-x-60"} transition-all duration-500 md:p-0 px-4`}>
               <div className=" text-2xl font-bold">About Me</div>
               <div>
                 <img
@@ -93,7 +87,7 @@ const About = () => {
                 </div>
               </div>
             </div>
-          </div>
+    
           <div />
         </div>
       </div>

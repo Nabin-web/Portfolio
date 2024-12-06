@@ -1,9 +1,12 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../index.css";
 import { FaGithub, FaLinkedin, FaLinkedinIn } from "react-icons/fa";
+import { useInView } from "react-intersection-observer";
 
 const Navbar = () => {
   const [scroll, setScroll] = useState(false);
+  const [hasAnimated, setHasAnimated]= useState(false)
+  const {ref, inView} = useInView({threshold:0})
   const navArray = [
     { label: "HOME", link: "#home", id: "home" },
     { label: "ABOUT", link: "#about", id: "about_section" },
@@ -21,6 +24,12 @@ const Navbar = () => {
       setScroll(false);
     }
   };
+
+  useEffect(()=>{
+    if(inView){
+      setHasAnimated(true)
+    }
+  },[inView])
   return (
     <>
       {" "}
@@ -56,8 +65,9 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-      <section id="home" className="section">
-        <div className="flex flex-col items-center h-screen bg-prof  gap-8 absolute top-0 w-full justify-center text-white">
+      <section ref={ref} id="home" className="section">
+     
+        <div className={` ${(hasAnimated ||inView) ? " opacity-100 ":"opacity-0"} flex flex-col items-center h-screen bg-prof  gap-8 absolute top-0 w-full justify-center text-white transition-opacity duration-1000`}>
           <div className="md:text-6xl text-3xl mt-30">Welcome, I'm</div>
           <ul className="dynamic-txts font-bold text-center">
             <li>Nabin Kutu</li>
