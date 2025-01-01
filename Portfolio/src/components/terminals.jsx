@@ -8,9 +8,9 @@ export function Terminal({ title, children, setExpand, expanded }) {
         <span className="text-gray-400 text-sm">{title}</span>
         <div className="flex items-center gap-4">
             {expanded ?
-            <FaChevronUp className=" text-2xl text-white cursor-pointer hover:rotate-180 transition-transform duration-500" onClick={()=> setExpand((prev)=> !prev)}/>    
+            <FaChevronUp className=" text-2xl text-white cursor-pointer transition-transform duration-500" onClick={()=> setExpand((prev)=> !prev)}/>    
             :
-            <FaChevronDown className=" text-2xl text-white cursor-pointer hover:rotate-180 transition-transform duration-500" onClick={()=> setExpand((prev)=> !prev)}/>    
+            <FaChevronDown className=" text-2xl text-white cursor-pointer transition-transform duration-500" onClick={()=> setExpand((prev)=> !prev)}/>    
             }
         <WindowControls />
         </div>

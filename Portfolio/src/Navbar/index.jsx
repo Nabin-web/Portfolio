@@ -44,7 +44,7 @@ const Navbar = () => {
               <a
                 key={index}
                 href={`#${each.id}`}
-                className="p-4 rounded font-sans font-thin capitalize  cursor-pointer"
+                className="p-4 rounded font-sans capitalize  cursor-pointer"
                 // onClick={() => each.link === "#home" && window.scrollTo(0, 0)}
                 // disabled={each.label !== "HOME" && true}
               >
@@ -92,7 +92,8 @@ const Navbar = () => {
             </a>
           </div>
           <a
-            className="w-1/8 border rounded-full px-4 py-2 hover:bg-white hover:text-black transition duration-500"
+            // className="w-1/8 border rounded-full px-4 py-2 hover:bg-white hover:text-black transition duration-500"
+            className="w-1/8 border rounded-full px-4 py-2 btn liquid hover:text-black"
             href="../../public/cv.pdf"
             download
           >
