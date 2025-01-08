@@ -94,7 +94,7 @@ const Navbar = () => {
           <a
             // className="w-1/8 border rounded-full px-4 py-2 hover:bg-white hover:text-black transition duration-500"
             className="w-1/8 border rounded-full px-4 py-2 btn liquid hover:text-black"
-            href="../../public/cv.pdf"
+            href="/cv.pdf"
             download
           >
             Download CV
